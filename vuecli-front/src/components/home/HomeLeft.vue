@@ -3,13 +3,12 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-.home-left{
-  width: 30%;
+.home-left {
+  width: 10%;
+  background-color: white;
 }
 </style>
