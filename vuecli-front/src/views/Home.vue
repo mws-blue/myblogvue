@@ -1,6 +1,6 @@
 <template>
-    <div class="home-container">
-    <home-left></home-left>  
+  <div class="home-container">
+    <home-left></home-left>
     <home-middle></home-middle>
     <home-right></home-right>
   </div>
@@ -10,24 +10,25 @@
 import HomeLeft from "@/components/home/HomeLeft.vue";
 import HomeMiddle from "@/components/home/HomeMiddle.vue";
 import HomeRight from "@/components/home/HomeRight.vue";
-export default{
-  components:{
-    "home-left":HomeLeft,
-     "home-middle":HomeMiddle,
-"home-right":HomeRight
+export default {
+  components: {
+    "home-left": HomeLeft,
+    "home-middle": HomeMiddle,
+    "home-right": HomeRight
   }
-}
+};
 </script>
 
 <style>
-ul,li{
+ul,
+li {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.home-container{
+.home-container {
   height: 100vh;
   display: flex;
-  background-color: #F5F6F7;
+  background-color: #f5f6f7;
 }
 </style>
