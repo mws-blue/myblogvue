@@ -1,8 +1,11 @@
 <template>
   <div class="home-container">
-    <home-left></home-left>
+    <div class="container-info">
+      <home-left></home-left>
     <home-middle></home-middle>
     <home-right></home-right>
+    </div>
+    
   </div>
 </template>
 
@@ -28,7 +31,14 @@ li {
 }
 .home-container {
   height: 100vh;
+  background-color: #ededee;
+  padding-top: 10px;
+}
+.container-info{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto ;
   display: flex;
-  background-color: #f5f6f7;
+  background-color: white;
 }
 </style>
