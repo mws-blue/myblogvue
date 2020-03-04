@@ -1,27 +1,30 @@
 <template>
 	<div class="home-left">
 		<ul>
-			<li><a herf="">推荐</a></li>
-			<li><a herf="">动态</a></li>
-			<li><a herf="">程序人生</a></li>
-			<li><a herf="">Python</a></li>
-			<li><a herf="">Java</a></li>
-			<li><a herf="">前端</a></li>
-			<li><a herf="">架构</a></li>
-			<li><a herf="">区块链</a></li>
-			<li><a herf="">数据链</a></li>
-			<li><a herf="">5G</a></li>
-			<li><a herf="">游戏开发</a></li>
-			<li><a herf="">移动开发</a></li>
-			<li><a herf="">运维</a></li>
-			<li><a herf="">人工智能</a></li>
-			<li><a herf="">安全</a></li>
-			<li><a herf="">云计算/大数据</a></li>
-			<li><a herf="">研发管理</a></li>
-			<li><a herf="">物联网</a></li>
-			<li><a herf="">计算机基础</a></li>
-			<li><a herf="">音视频开发</a></li>
-			<li><a herf="">其他</a></li>
+			<li><router-link to="">推荐</router-link>
+			</li>
+			<li><router-link to="">动态</router-link>
+			</li>
+			<li><router-link to="">程序人生</router-link></li>
+			<li><router-link to="">Python</router-link></li>
+			<li><router-link to="">Java</router-link></li>
+			<li><router-link to="">前端</router-link></li>
+			<li><router-link to="">架构</router-link></li>
+			<li><router-link to="">区块链</router-link></li>
+			<li><router-link to="">数据链</router-link></li>
+			<li><router-link to="">5G</router-link></li>
+			<li><router-link to="">游戏开发</router-link></li>
+			<li><router-link to="">移动开发</router-link></li>
+			<li><router-link to="">运维</router-link></li>
+			<li><router-link to="">人工智能</router-link></li>
+			<li><router-link to="">安全</router-link></li>
+			<li><router-link to="">云计算/大数据</router-link></li>
+			<li><router-link to="">研发管理</router-link></li>
+			<li><router-link to="">物联网</router-link></li>
+			<li><router-link to="">计算机基础</router-link></li>
+			<li><router-link to="">音视频开发</router-link></li>
+			<li><router-link to="">其他</router-link></li>
+			<router-view></router-view>
 		</ul>
 	</div>
 </template>
@@ -34,7 +37,8 @@
 
 <style>
 	.home-left {
-		width: 30%;
+		width: 10%;
+		background-color: white;
 	}
 
 	ul {
@@ -59,3 +63,5 @@
 
 	}
 </style>
+
+

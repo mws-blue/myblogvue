@@ -1,9 +1,23 @@
 <template>
   <div class="home-middle">
     <div>
-      <img :src="lunboList[currentIndex]" class="lunboImg" />
+      <img :src="homeHuaWei" alt width="100%" height="64px" />
     </div>
-    <div>
+    <div class="ad-box">
+      <!-- <img :src="lunboList[currentIndex]" class="lunboImg" alt=""/> -->
+      <div class="lunbo-block">
+        <el-carousel height="200px">
+          <el-carousel-item v-for="item in lunboList" :key="item">
+            <img :src="item" class="lunboImg" alt />
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+      <div class="product-img">
+        <img :src="fucnsia" class="adImg-top" alt />
+        <img :src="spark" class="adImg-next" alt />
+      </div>
+    </div>
+    <!-- <div>
       <div class="page">
         <ul class="lunbo-act">
           <li @click="gotoPage(prevIndex)" class="go-left">&lt;</li>
@@ -20,18 +34,24 @@
           <li @click="gotoPage(nextIndex)" class="go-right">&gt;</li>
         </ul>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script>
+import homeHuaWei from "@/assets/AirEngine.jpg";
 import lunbo1 from "@/assets/lunbo1.png";
 import lunbo2 from "@/assets/lunbo2.png";
 import lunbo3 from "@/assets/lunbo3.png";
+import fucnsia from "@/assets/fucnsia.jpg";
+import spark from "@/assets/spark.jpg";
 
 export default {
   data: function() {
     return {
+      homeHuaWei: homeHuaWei,
+      fucnsia: fucnsia,
+      spark: spark,
       lunboList: [lunbo1, lunbo2, lunbo3],
       currentIndex: 0
     };
@@ -67,8 +87,10 @@ export default {
 
 <style>
 .home-middle {
-  width: 40%;
+  width: 58%;
   position: relative;
+  margin: 0, 10px;
+  background-color: white;
 }
 
 .lunboImg {
@@ -76,42 +98,37 @@ export default {
   height: 200px;
 }
 
-.lunbo-act {
+.ad-box {
   display: flex;
-  align-items: center;
-  color: rgb(231, 230, 230);
+  margin-top: 4px;
 }
 
-.circle-box {
+.adImg-top {
   width: 100%;
-  position: absolute;
-  top: 185px;
-  display: flex;
-  justify-content: center;
-}
-.go-left {
-  position: absolute;
-  left: 0;
-  top: 85px;
-  font-size: 30px;
+  height: 98px;
 }
 
-.go-right {
-  position: absolute;
-  right: 0;
-  top: 85px;
-  font-size: 30px;
+.adImg-next {
+  width: 100%;
+  height: 98px;
 }
 
-.lunbo-circle {
+.product-img {
+  width: 30%;
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 8px;
-  background-color: white;
+  margin-left: 2px;
 }
-.current {
-  background-color: bisque;
+
+.lunbo-block{
+   width: 70%;
 }
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
+}
+
 </style>

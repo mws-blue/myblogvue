@@ -23,22 +23,21 @@ export default {
 </script>
 
 <style>
-ul,
-li {
+ul,li {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 .home-container {
   height: 100vh;
-  background-color: #ededee;
   padding-top: 10px;
+  background-color: #ededee;
 }
 .container-info{
   width: 80%;
   height: 100%;
   margin: 0 auto ;
   display: flex;
-  background-color: white;
+  justify-content: space-between;
 }
 </style>
