@@ -35,7 +35,7 @@
 	}
 </script>
 
-<style>
+<style scoped="scoped">
 	.home-left {
 		width: 10%;
 		background-color: white;

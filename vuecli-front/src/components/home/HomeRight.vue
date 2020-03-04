@@ -13,17 +13,17 @@
          </div>
          <div v-for="(item,index) in todayInfo" :key="index" class="today-info">
              <img :src="item.adImg" width="60px" height="50px" alt="">
-             <a href="#">{{item.title}}</a>
+             <a href="#" class="title-desc">{{item.title}}</a>
          </div>
     </div>
   </div>
 </template>
 
 <script>
-import fuwuqi from "@/assets/fuwuqi.jpg";
-import python from "@/assets/python.png";
-import AI from "@/assets/AI.png";
-import zhuji from "@/assets/zhuji.jpg";
+import fuwuqi from "@/assets/homeImg/fuwuqi.jpg";
+import python from "@/assets/homeImg/python.png";
+import AI from "@/assets/homeImg/AI.png";
+import zhuji from "@/assets/homeImg/zhuji.jpg";
 
 export default {
   data: function() {
@@ -31,6 +31,26 @@ export default {
       fuwuqi: fuwuqi,
       adImgList: [python, AI, zhuji],
       todayInfo:[
+        {
+          "adImg":fuwuqi,
+          "title":"福利直投！CSDN技术公开课评选进行中"
+        },
+        {
+          "adImg":fuwuqi,
+          "title":"福利直投！CSDN技术公开课评选进行中"
+        },
+        {
+          "adImg":fuwuqi,
+          "title":"福利直投！CSDN技术公开课评选进行中"
+        },
+         {
+          "adImg":fuwuqi,
+          "title":"福利直投！CSDN技术公开课评选进行中"
+        },
+         {
+          "adImg":fuwuqi,
+          "title":"福利直投！CSDN技术公开课评选进行中"
+        },
         {
           "adImg":fuwuqi,
           "title":"福利直投！CSDN技术公开课评选进行中"
@@ -82,7 +102,7 @@ export default {
   background-color: red;
 }
 
-h3{
+.today-title h3{
   padding-left: 8px;
 }
 
@@ -91,7 +111,7 @@ h3{
   padding-top: 10px;
 }
 
-a{
+.title-desc{
   text-decoration: none;
   color: black;
   margin-left: 8px;

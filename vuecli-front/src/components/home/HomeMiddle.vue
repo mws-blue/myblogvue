@@ -39,12 +39,12 @@
 </template>
 
 <script>
-import homeHuaWei from "@/assets/AirEngine.jpg";
-import lunbo1 from "@/assets/lunbo1.png";
-import lunbo2 from "@/assets/lunbo2.png";
-import lunbo3 from "@/assets/lunbo3.png";
-import fucnsia from "@/assets/fucnsia.jpg";
-import spark from "@/assets/spark.jpg";
+import homeHuaWei from "@/assets/homeImg/AirEngine.jpg";
+import lunbo1 from "@/assets/homeImg/lunbo1.png";
+import lunbo2 from "@/assets/homeImg/lunbo2.png";
+import lunbo3 from "@/assets/homeImg/lunbo3.png";
+import fucnsia from "@/assets/homeImg/fucnsia.jpg";
+import spark from "@/assets/homeImg/spark.jpg";
 
 export default {
   data: function() {
