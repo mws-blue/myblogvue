@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<div style="display: flex;width: 100%">
+		<div style="display: flex;width: 100%;">
 			<img style="height: 60px;margin-left: 5%;" src="./assets/csdn-logo_.png">
 			<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
 			 :show-overflow-tooltip="true">
