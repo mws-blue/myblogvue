@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
 	<div id="app">
 		<div style="display: flex;width: 100%;">
 			<img style="height: 60px;margin-left: 5%;" src="./assets/csdn-logo_.png">
@@ -29,45 +28,6 @@
 		<div class="topright"></div>
 	</div> -->
 	</div>
-=======
-  <div id="app">
-    <div style="display: flex;width: 100%">
-      <img
-        style="height: 60px;margin-left: 5%;"
-        src="//csdnimg.cn/cdn/content-toolbar/csdn-logo_.png?v=20190924.1"
-      />
-      <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        :show-overflow-tooltip="true"
-      >
-        <el-menu-item index="1">
-          <router-link to="/">首页</router-link>
-        </el-menu-item>
-        <el-menu-item index="2">
-          <router-link to="/blog">博客</router-link>
-        </el-menu-item>
-        <el-menu-item index="3">学院</el-menu-item>
-        <el-menu-item index="4">下载</el-menu-item>
-        <el-menu-item index="5">
-          <router-link to="/platform">论坛</router-link>
-        </el-menu-item>
-        <el-menu-item index="6">问答</el-menu-item>
-        <el-menu-item index="7">活动</el-menu-item>
-        <el-menu-item index="8">专题</el-menu-item>
-        <el-menu-item index="9">招聘</el-menu-item>
-        <el-menu-item index="10">APP</el-menu-item>
-        <el-menu-item index="11">VIP会员</el-menu-item>
-        <el-input style="width: 200px;margin-top: 10px;" v-model="input" placeholder="请输入内容"></el-input>
-        <span style="font-size: 14px;color: #D92E2E;margin-left: 10px;">写博客</span>
-        <el-menu-item to="/login" style="color: #222429;font-size: 14px;margin-left: 20px;">登录/注册</el-menu-item>
-      </el-menu>
-    </div>
-    <router-view />
-  </div>
->>>>>>> 4064b3bb9f120487a020d2117df8090837a3b4bb
 </template>
 <script>
 export default {
@@ -85,7 +45,6 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
 <style lang="scss" scoped="scoped">
 	* {
 		padding: 0;
@@ -109,11 +68,4 @@ export default {
 	// 	background-color: blue;
 	// 	width: 30%;
 	// }
-=======
-<style lang="scss">
-* {
-  padding: 0;
-  margin: 0;
-}
->>>>>>> 4064b3bb9f120487a020d2117df8090837a3b4bb
 </style>

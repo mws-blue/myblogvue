@@ -57,13 +57,12 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-	import homeHuaWei from "@/assets/AirEngine.jpg";
-	import lunbo1 from "@/assets/lunbo1.png";
-	import lunbo2 from "@/assets/lunbo2.png";
-	import lunbo3 from "@/assets/lunbo3.png";
-	import fucnsia from "@/assets/fucnsia.jpg";
-	import spark from "@/assets/spark.jpg";
+	import homeHuaWei from "@/assets/homeImg/AirEngine.jpg";
+	import lunbo1 from "@/assets/homeImg/lunbo1.png";
+	import lunbo2 from "@/assets/homeImg/lunbo2.png";
+	import lunbo3 from "@/assets/homeImg/lunbo3.png";
+	import fucnsia from "@/assets/homeImg/fucnsia.jpg";
+	import spark from "@/assets/homeImg/spark.jpg";
 	import wen from "@/assets/middle/wen.jpg";
 	import zan from "@/assets/middle/zan.png";
 	import yanjing from "@/assets/middle/yanjing.png";
@@ -171,52 +170,7 @@
 			}, 4000);
 		}
 	};
-=======
-import homeHuaWei from "@/assets/homeImg/AirEngine.jpg";
-import lunbo1 from "@/assets/homeImg/lunbo1.png";
-import lunbo2 from "@/assets/homeImg/lunbo2.png";
-import lunbo3 from "@/assets/homeImg/lunbo3.png";
-import fucnsia from "@/assets/homeImg/fucnsia.jpg";
-import spark from "@/assets/homeImg/spark.jpg";
 
-export default {
-  data: function() {
-    return {
-      homeHuaWei: homeHuaWei,
-      fucnsia: fucnsia,
-      spark: spark,
-      lunboList: [lunbo1, lunbo2, lunbo3],
-      currentIndex: 0
-    };
-  },
-  methods: {
-    gotoPage(index) {
-      this.currentIndex = index;
-    }
-  },
-  computed: {
-    prevIndex() {
-      if (this.currentIndex == 0) {
-        return this.lunboList.length - 1;
-      } else {
-        return this.currentIndex - 1;
-      }
-    },
-    nextIndex() {
-      if (this.currentIndex == this.lunboList.length - 1) {
-        return 0;
-      } else {
-        return this.currentIndex + 1;
-      }
-    }
-  },
-  mounted: function() {
-    setInterval(() => {
-      this.gotoPage(this.nextIndex);
-    }, 4000);
-  }
-};
->>>>>>> 4064b3bb9f120487a020d2117df8090837a3b4bb
 </script>
 
 <style>
