@@ -104,6 +104,174 @@ export default {
               url: ""
             }
           ]
+        },
+        {
+          title: "云计算",
+          interests: [
+            {
+              interestName: "PaaS/SaaS",
+              url: ""
+            },
+            {
+              interestName: "AWS",
+              url: ""
+            },
+            {
+              interestName: "华为云计算",
+              url: ""
+            },
+            {
+              interestName: "云安全",
+              url: ""
+            }
+          ]
+        },
+        {
+          title: "云计算",
+          interests: [
+            {
+              interestName: "PaaS/SaaS",
+              url: ""
+            },
+            {
+              interestName: "AWS",
+              url: ""
+            },
+            {
+              interestName: "华为云计算",
+              url: ""
+            },
+            {
+              interestName: "云安全",
+              url: ""
+            }
+          ]
+        },
+        {
+          title: "云计算",
+          interests: [
+            {
+              interestName: "PaaS/SaaS",
+              url: ""
+            },
+            {
+              interestName: "AWS",
+              url: ""
+            },
+            {
+              interestName: "华为云计算",
+              url: ""
+            },
+            {
+              interestName: "云安全",
+              url: ""
+            }
+          ]
+        },
+        {
+          title: "云计算",
+          interests: [
+            {
+              interestName: "PaaS/SaaS",
+              url: ""
+            },
+            {
+              interestName: "AWS",
+              url: ""
+            },
+            {
+              interestName: "华为云计算",
+              url: ""
+            },
+            {
+              interestName: "云安全",
+              url: ""
+            }
+          ]
+        },
+        {
+          title: "云计算",
+          interests: [
+            {
+              interestName: "PaaS/SaaS",
+              url: ""
+            },
+            {
+              interestName: "AWS",
+              url: ""
+            },
+            {
+              interestName: "华为云计算",
+              url: ""
+            },
+            {
+              interestName: "云安全",
+              url: ""
+            }
+          ]
+        },
+        {
+          title: "云计算",
+          interests: [
+            {
+              interestName: "PaaS/SaaS",
+              url: ""
+            },
+            {
+              interestName: "AWS",
+              url: ""
+            },
+            {
+              interestName: "华为云计算",
+              url: ""
+            },
+            {
+              interestName: "云安全",
+              url: ""
+            }
+          ]
+        },
+        {
+          title: "云计算",
+          interests: [
+            {
+              interestName: "PaaS/SaaS",
+              url: ""
+            },
+            {
+              interestName: "AWS",
+              url: ""
+            },
+            {
+              interestName: "华为云计算",
+              url: ""
+            },
+            {
+              interestName: "云安全",
+              url: ""
+            }
+          ]
+        },
+        {
+          title: "云计算",
+          interests: [
+            {
+              interestName: "PaaS/SaaS",
+              url: ""
+            },
+            {
+              interestName: "AWS",
+              url: ""
+            },
+            {
+              interestName: "华为云计算",
+              url: ""
+            },
+            {
+              interestName: "云安全",
+              url: ""
+            }
+          ]
         }
       ]
     };
@@ -127,12 +295,13 @@ export default {
 
 <style>
 .mysearch {
-  width: 180px;
+  width: 190px;
   height: 30px;
-  margin-bottom: 10px;
+  margin: 10px 0 10px 0;
 }
-.search-menu {
-  font-size: 12px;
+.search-menu{
+  height: 600px;
+  box-sizing:border-box;
 }
 .search-menu li {
   align-items: center;
@@ -143,7 +312,7 @@ export default {
   margin-right: 2px;
 }
 .tac{
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 }
 .search-menu .el-row {
   font-size: 12px !important;
@@ -158,11 +327,11 @@ export default {
   border: 1px solid black;
 }
 .search-menu .el-menu-vertical-demo {
-  width: 180px;
-  height: 16px;
+  width: 200px;
+  /* height: 16px; */
 }
 
-.search-menu .el-submenu__title {
+/* .search-menu .el-submenu__title {
   width: 180px;
   height: 16px;
   font-size: 12px;
@@ -170,7 +339,7 @@ export default {
 
 .search-menu .el-submenu__title {
   line-height: 16px;
-}
+} */
 
 .search-menu .el-submenu__title {
   padding: 0 !important;
