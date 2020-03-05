@@ -8,7 +8,7 @@
 					<router-link to="/">首页</router-link>
 				</el-menu-item>
 				<el-menu-item index="2">博客</el-menu-item>
-				<el-menu-item index="3">学院</el-menu-item>
+				<el-menu-item index="3"><router-link to="/xueyuan">学院</router-link></el-menu-item>
 				<el-menu-item index="4">下载</el-menu-item>
 				<el-menu-item index="5">论坛</el-menu-item>
 				<el-menu-item index="6">问答</el-menu-item>
@@ -45,7 +45,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped="scoped">
 	* {
 		padding: 0;
 		margin: 0;

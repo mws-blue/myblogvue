@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Xueyuan from '../views/Xueyuan.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +9,12 @@ const routes = [{
         path: '/',
         name: 'Home',
         component: Home
-    }
+    },
+	{
+	        path: '/xueyuan',
+	        name: 'Xueyuan',
+	        component: Xueyuan
+	    }
 ]
 
 const router = new VueRouter({
