@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 	<div class="home-container">
 		<div class="container-info">
 			<home-left></home-left>
@@ -6,6 +7,15 @@
 			<home-right></home-right>
 		</div>
 	</div>
+=======
+  <div class="home-container">
+    <div class="container-info">
+      <home-left></home-left>
+      <home-middle></home-middle>
+      <home-right></home-right>
+    </div>
+  </div>
+>>>>>>> 4064b3bb9f120487a020d2117df8090837a3b4bb
 </template>
 
 <script>
@@ -22,6 +32,7 @@
 </script>
 
 <style>
+<<<<<<< HEAD
 	ul,
 	li {
 		list-style: none;
@@ -43,3 +54,22 @@
 		justify-content: space-between;
 	}
 </style>
+=======
+ul,li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.home-container {
+  padding-top: 10px;
+  background-color: #ededee;
+}
+.container-info{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto ;
+  display: flex;
+  justify-content: space-between;
+}
+</style>
+>>>>>>> 4064b3bb9f120487a020d2117df8090837a3b4bb
