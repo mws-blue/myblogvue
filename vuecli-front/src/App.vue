@@ -31,7 +31,7 @@
         <el-menu-item index="11">VIP会员</el-menu-item>
         <el-input style="width: 200px;margin-top: 10px;" v-model="input" placeholder="请输入内容"></el-input>
         <span style="font-size: 14px;color: #D92E2E;margin-left: 10px;">写博客</span>
-        <el-menu-item to="/login" style="color: #222429;font-size: 14px;margin-left: 20px;">登录/注册</el-menu-item>
+        <el-menu-item to="/login" style="color: #222429;font-size: 14px;margin-left: 20px;" @click="login">登录/注册</el-menu-item>
       </el-menu>
     </div>
     <router-view />
@@ -49,7 +49,12 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-    }
+    },
+login(){
+       this.$router.push({
+              path: "/Login"
+            });
+}
   }
 };
 </script>
