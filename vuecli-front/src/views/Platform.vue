@@ -42,6 +42,7 @@ export default {
   width: 210px;
   height: 600px;
   padding-left: 10px;
+  box-sizing: border-box;
   background-color: aqua;
 }
 .platform-middle{
