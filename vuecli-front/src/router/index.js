@@ -13,20 +13,37 @@ const routes = [{
         component: Home
     },
     {
-        path:'/blog',
-        name:'blog',
-        component:Blog
+        path: '/blog',
+        name: 'blog',
+        component: Blog
     },
     {
-        path:'/platform',
-        name:'platform',
-        component:Platform
+        path: '/platform',
+        name: 'platform',
+        component: Platform
     },
     {
         path: '/xueyuan',
         name: 'Xueyuan',
         component: Xueyuan
+    },
+    {
+        path: '/Login',
+        component: () =>
+            import ('../views/Login.vue'),
+        meta: {
+            isLogin: false
+        }
+    },
+    {
+        path: '/Register',
+        component: () =>
+            import ('../views/Register.vue'),
+        meta: {
+            isLogin: false
+        }
     }
+
 ]
 
 const router = new VueRouter({
