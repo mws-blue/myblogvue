@@ -19,6 +19,7 @@
   </div>
 </template>
 <script>
+
 import axios from "axios";
 axios.defaults.baseURL = "http://localhost:8888";
 export default {
@@ -68,9 +69,8 @@ export default {
 
             localStorage.setItem("username", this.ruleForm1.username);
             localStorage.setItem("password", this.ruleForm1.password);
-            console.log(localStorage.getItem("password"));
-
-            this.$emit("empinfo", this.ctof);
+            localStorage.setItem("imgUrl",response.data.data.imgUrl)
+        
             this.$router.push({
               path: "/"
             });
