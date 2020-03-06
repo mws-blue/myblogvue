@@ -67,13 +67,13 @@ export default {
     userinfo(){
         this.$router.push({path:"/userinfo"})
       },
-    myBlogs(){
+    myBlogs(){ 
         this.$router.push({path:"/myBlogs"})
       },
     manageBlogs(){
         this.$router.push({path:"/manageBlogs"})
       },
-    handleSelect(key, keyPath) {
+    handleSelect(key, keyPath) { 
        console.log(key, keyPath);
     },
     
