@@ -21,11 +21,11 @@
             </el-submenu>
           </el-submenu>
           <el-menu-item index="3">论坛牛人</el-menu-item>
-		  <el-menu-item index="3">排行榜</el-menu-item>
-		  <el-menu-item index="3">论坛地图</el-menu-item>
-		  <el-menu-item index="3">论坛任务</el-menu-item>
-		  <el-menu-item index="3">论坛帮助</el-menu-item>
-          <el-menu-item index="4">
+		  <el-menu-item index="4">排行榜</el-menu-item>
+		  <el-menu-item index="5">论坛地图</el-menu-item>
+		  <el-menu-item index="6">论坛任务</el-menu-item>
+		  <el-menu-item index="7">论坛帮助</el-menu-item>
+          <el-menu-item index="8">
             <a href="https://www.ele.me" target="_blank">我要发贴</a>
           </el-menu-item>
         </el-menu>

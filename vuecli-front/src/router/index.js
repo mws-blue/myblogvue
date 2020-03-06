@@ -43,6 +43,11 @@ const routes = [{
 
     },
     {
+        path: '/wangeditor',
+        component: () =>
+            import ('../views/wangeditor.vue'),
+    },
+    {
         path: '/userinfo',
         component: () =>
             import ('../views/userinfo/userinfo.vue'),

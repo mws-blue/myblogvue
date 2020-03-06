@@ -4,7 +4,6 @@
       <img :src="homeHuaWei" alt width="100%" height="64px" />
     </div>
     <div class="ad-box">
-      <!-- <img :src="lunboList[currentIndex]" class="lunboImg" alt=""/> -->
       <div class="lunbo-block">
         <el-carousel height="200px">
           <el-carousel-item v-for="item in lunboList" :key="item">
@@ -37,24 +36,6 @@
         </div>
       </div>
     </div>
-    <!-- <div>
-      <div class="page">
-        <ul class="lunbo-act">
-          <li @click="gotoPage(prevIndex)" class="go-left">&lt;</li>
-          <span class="circle-box">
-            <li
-              v-for="(item,index) in lunboList"
-              :key="index"
-              @click="gotoPage(index)"
-              class="lunbo-circle"
-              :class="{'current':currentIndex==index}"
-            ></li>
-          </span>
-
-          <li @click="gotoPage(nextIndex)" class="go-right">&gt;</li>
-        </ul>
-      </div>
-    </div>-->
   </div>
 </template>
 
@@ -223,7 +204,7 @@
 
 .middlebottom {
   width: 100%;
-  height: 13%;
+  height: 110px;
   background-color: #fafafa;
   margin-top: 10px;
 }
