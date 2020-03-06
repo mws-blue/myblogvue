@@ -26,7 +26,7 @@ class LoginController extends Controller {
             data = { code: 0, Msg: '密码错误' };
         }
         ctx.body = data;
-        //:数据库查询来的数据
+        //:数据库查询来的数据 
     }
 }
 
