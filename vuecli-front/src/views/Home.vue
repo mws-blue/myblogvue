@@ -9,26 +9,19 @@
 </template>
 
 <script>
-import HomeLeft from "@/components/home/HomeLeft.vue";
-import HomeMiddle from "@/components/home/HomeMiddle.vue";
-import HomeRight from "@/components/home/HomeRight.vue";
-export default {
-  components: {
-    "home-left": HomeLeft,
-    "home-middle": HomeMiddle,
-    "home-right": HomeRight
-  }
-};
+	import HomeLeft from "@/components/home/HomeLeft.vue";
+	import HomeMiddle from "@/components/home/HomeMiddle.vue";
+	import HomeRight from "@/components/home/HomeRight.vue";
+	export default {
+		components: {
+			"home-left": HomeLeft,
+			"home-middle": HomeMiddle,
+			"home-right": HomeRight
+		}
+	};
 </script>
 
 <style>
-	ul,
-	li {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
 	.home-container {
 		height: 1050px;
 		padding-top: 10px;

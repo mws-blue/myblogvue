@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{'navBarfixed':isFixed}">
     <div>
       <input type="text" v-model="searchFile" class="mysearch" />
     </div>
@@ -19,7 +19,7 @@
             <el-submenu index="1">
               <template slot="title">
                 <strong class="status-log">+</strong>
-                <span class="iconfont icon-wenjianjia"></span>
+                <span class="fileColor iconfont icon-wenjianjia"></span>
                 <span>{{item.title}}</span>
               </template>
               <el-menu-item-group v-for="(item2,index2) in item.interests" :key="index2" class="intrestList">
@@ -40,6 +40,7 @@ import "@/assets/iconfont/platform/iconfont.css";
 export default {
   data: function() {
     return {
+      isFixed:false,
       searchFile: "寻找我感兴趣的论坛",
       interestList: [
         {
@@ -209,91 +210,38 @@ export default {
               url: ""
             }
           ]
-        },
-        {
-          title: "云计算",
-          interests: [
-            {
-              interestName: "PaaS/SaaS",
-              url: ""
-            },
-            {
-              interestName: "AWS",
-              url: ""
-            },
-            {
-              interestName: "华为云计算",
-              url: ""
-            },
-            {
-              interestName: "云安全",
-              url: ""
-            }
-          ]
-        },
-        {
-          title: "云计算",
-          interests: [
-            {
-              interestName: "PaaS/SaaS",
-              url: ""
-            },
-            {
-              interestName: "AWS",
-              url: ""
-            },
-            {
-              interestName: "华为云计算",
-              url: ""
-            },
-            {
-              interestName: "云安全",
-              url: ""
-            }
-          ]
-        },
-        {
-          title: "云计算",
-          interests: [
-            {
-              interestName: "PaaS/SaaS",
-              url: ""
-            },
-            {
-              interestName: "AWS",
-              url: ""
-            },
-            {
-              interestName: "华为云计算",
-              url: ""
-            },
-            {
-              interestName: "云安全",
-              url: ""
-            }
-          ]
         }
       ]
     };
   },
   methods: {
+    watchScroll(){
+       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+       if(scrollTop > 100){
+         this.isFixed = true;
+       }else{
+         this.isFixed = false;
+       }
+    },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
-    },
-    clickFile(e) {
-      if (this.tag == 1) {
-      } else if (this.tag == 2) {
-        this.isopen = true;
-      }
     }
+  },
+  mounted(){
+    window.addEventListener("scroll",this.watchScroll);
   }
 };
 </script>
 
 <style>
+.navBarfixed{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
 .mysearch {
   width: 190px;
   height: 30px;
@@ -311,9 +259,7 @@ export default {
 .search-menu li span {
   margin-right: 2px;
 }
-.tac{
-	/* margin-bottom: 10px; */
-}
+
 .search-menu .el-row {
   font-size: 12px !important;
 }
@@ -326,20 +272,12 @@ export default {
   margin-right: 6px !important;
   border: 1px solid black;
 }
+.fileColor{
+  color: #FFD46F;
+}
 .search-menu .el-menu-vertical-demo {
-  width: 200px;
-  /* height: 16px; */
+  width: 190px;
 }
-
-/* .search-menu .el-submenu__title {
-  width: 180px;
-  height: 16px;
-  font-size: 12px;
-}
-
-.search-menu .el-submenu__title {
-  line-height: 16px;
-} */
 
 .search-menu .el-submenu__title {
   padding: 0 !important;

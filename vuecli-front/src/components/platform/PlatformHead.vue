@@ -67,9 +67,4 @@ export default {
 	height: 44px;
 	line-height: 44px;
 }
-.csdn-platform-main{
-	width: 100%;
-	height: 600px;
-	display: flex;
-}
 </style>
