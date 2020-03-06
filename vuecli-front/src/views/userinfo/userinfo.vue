@@ -15,7 +15,7 @@
           <el-menu-item index="1">
             <i class="el-icon-user-solid"></i>
             <span class="title">个人中心</span>
-          </el-menu-item>
+          </el-menu-item> 
         </router-link>
           <router-link to="/userinfo/attention">
           <el-menu-item index="2">
@@ -31,7 +31,7 @@
           </el-menu-item>
            </router-link>
         </el-menu>
-      </el-col>
+      </el-col> 
     </div>
     <div id="content">
     <pensonal v-if="ul==0"></pensonal>

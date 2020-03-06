@@ -6,7 +6,7 @@
             <div class="header">
                 <img class="head" :src=Img alt="">
             </div>
-            <div class="right">
+            <div class="right"> 
                 <div class="right_info">
                     <div class="id_card">
                         <span class="id_name">ID：SunLRJ</span>
@@ -20,7 +20,7 @@
                 <div class="line" style="height: 1px;background:#e0e0e0;"></div>
             </div>
         </div>
-    </div>
+    </div> 
 </div>
    
 </template>
