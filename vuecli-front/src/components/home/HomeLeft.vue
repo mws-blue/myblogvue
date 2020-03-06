@@ -37,6 +37,7 @@
 
 <style scoped="scoped">
 	.home-left {
+		height: 630px;
 		width: 10%;
 		background-color: white;
 	}

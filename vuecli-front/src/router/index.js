@@ -64,8 +64,6 @@ const routes = [{
                     import ('../views/userinfo/collect.vue'),
             }
         ]
-
-
     },
     {
         path: '/myBlogs',
@@ -79,7 +77,6 @@ const routes = [{
             import ('../views/manageBlogs.vue'),
 
     }
-
 
 ]
 
