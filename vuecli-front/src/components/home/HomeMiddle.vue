@@ -1,61 +1,42 @@
 <template>
-	<div class="home-middle">
-		<div>
-			<img :src="homeHuaWei" alt width="100%" height="64px" />
-		</div>
-		<div class="ad-box">
-			<!-- <img :src="lunboList[currentIndex]" class="lunboImg" alt=""/> -->
-			<div class="lunbo-block">
-				<el-carousel height="200px">
-					<el-carousel-item v-for="item in lunboList" :key="item">
-						<img :src="item" class="lunboImg" alt />
-					</el-carousel-item>
-				</el-carousel>
-			</div>
-			<div class="product-img">
-				<img :src="fucnsia" class="adImg-top" alt />
-				<img :src="spark" class="adImg-next" alt />
-			</div>
-		</div>
-		<div v-for="(item,index) in mydata" :key="index" class="middlebottom">
-			<h5>
-				<a style="width: 100%;" href="http://www.baidu.com">{{item.title}}</a>
-			</h5>
-			<div class="middlebottomxiao">{{item.titletwo}}</div>
-			<div class="middlebottomtop">
-				<div class="middlebottomtopleft">
-					<img class="imgtop" :src="item.wen" alt width="24px" height="24px" />
-					<span>{{item.toptitle}}</span>
-				</div>
-				<div class="middlebottomtopright">
-					<img :src="item.zan" alt width="16px" height="16px" />
-					<span>{{item.toptwoa}}</span>
-					<img :src="item.yanjing" alt width="16px" height="16px" />
-					<span>{{item.toptwob}}</span>
-					<img :src="item.xiaoxi" alt width="16px" height="16px" />
-					<span>{{item.toptwoc}}</span>
-				</div>
-			</div>
-		</div>
-		<!-- <div>
-      <div class="page">
-        <ul class="lunbo-act">
-          <li @click="gotoPage(prevIndex)" class="go-left">&lt;</li>
-          <span class="circle-box">
-            <li
-              v-for="(item,index) in lunboList"
-              :key="index"
-              @click="gotoPage(index)"
-              class="lunbo-circle"
-              :class="{'current':currentIndex==index}"
-            ></li>
-          </span>
-
-          <li @click="gotoPage(nextIndex)" class="go-right">&gt;</li>
-        </ul>
+  <div class="home-middle">
+    <div>
+      <img :src="homeHuaWei" alt width="100%" height="64px" />
+    </div>
+    <div class="ad-box">
+      <div class="lunbo-block">
+        <el-carousel height="200px">
+          <el-carousel-item v-for="item in lunboList" :key="item">
+            <img :src="item" class="lunboImg" alt />
+          </el-carousel-item>
+        </el-carousel>
       </div>
-    </div>-->
-	</div>
+      <div class="product-img">
+        <img :src="fucnsia" class="adImg-top" alt />
+        <img :src="spark" class="adImg-next" alt />
+      </div>
+    </div>
+    <div v-for="(item,index) in mydata" :key="index" class="middlebottom">
+      <h5>
+        <a style="width: 100%;" href="http://www.baidu.com">{{item.title}}</a>
+      </h5>
+      <div class="middlebottomxiao">{{item.titletwo}}</div>
+      <div class="middlebottomtop">
+        <div class="middlebottomtopleft">
+          <img class="imgtop" :src="item.wen" alt width="24px" height="24px" />
+          <span>{{item.toptitle}}</span>
+        </div>
+        <div class="middlebottomtopright">
+          <img :src="item.zan" alt width="16px" height="16px" />
+          <span>{{item.toptwoa}}</span>
+          <img :src="item.yanjing" alt width="16px" height="16px" />
+          <span>{{item.toptwob}}</span>
+          <img :src="item.xiaoxi" alt width="16px" height="16px" />
+          <span>{{item.toptwoc}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

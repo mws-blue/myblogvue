@@ -1,3 +1,4 @@
+/* eslint-disable key-spacing */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-trailing-spaces */
@@ -15,7 +16,7 @@ class LoginController extends Controller {
         const { ctx, service } = this;
         let formData = ctx.request.query;
         let result = await service.login.login(formData.username);
-        let data = { code: 1, Msg: '登录成功' };
+        let data = { code: 1, Msg: '登录成功', data: result };
         if (!result) {
             data = { code: -1, Msg: '账号不存在' };
         }
@@ -25,8 +26,7 @@ class LoginController extends Controller {
             data = { code: 0, Msg: '密码错误' };
         }
         ctx.body = data;
-        console.log(formData);
-        console.log(result); //:数据库查询来的数据
+        //:数据库查询来的数据 
     }
 }
 
