@@ -11,7 +11,9 @@
     >
         <el-menu-item index="1"><router-link to="/">首页</router-link></el-menu-item>
         <el-menu-item index="2"><router-link to="/blog">博客</router-link></el-menu-item>
-        <el-menu-item index="3">学院</el-menu-item>
+        <el-menu-item index="3">
+          <router-link to="/xueyuan">学院</router-link>
+        </el-menu-item>
         <el-menu-item index="4">下载</el-menu-item>
         <el-menu-item index="5"><router-link to="/platform">论坛</router-link></el-menu-item>
         <el-menu-item index="6">问答</el-menu-item>
@@ -21,7 +23,10 @@
         <el-menu-item index="10">APP</el-menu-item>
         <el-menu-item index="11">VIP会员</el-menu-item>
         <el-input style="width: 200px;margin-top: 10px;" v-model="input" placeholder="请输入内容"></el-input>
-        <span style="font-size: 14px;color: #D92E2E;margin-left: 10px;">写博客</span>
+        <el-menu-item index="12">
+          <router-link to="/wangeditor">写博客</router-link>
+        </el-menu-item>
+        <!-- <span style="font-size: 14px;color: #D92E2E;margin-left: 10px;">写博客</span> -->
         
         <el-menu-item  
         v-show="isLogin=='login'" 
