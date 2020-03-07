@@ -186,7 +186,7 @@
 				</el-carousel>
 			</div>
 			<div class="tutop">
-				<h3  style="margin-left: 2%;">实战特训营</h3>
+				<h3 style="margin-left: 2%;">实战特训营</h3>
 				<div class="shizhan">
 					<img :src="tu1" class="tuimg" alt />
 				</div>
@@ -197,6 +197,12 @@
 					<img :src="tu3" class="tuimg" alt />
 				</div>
 			</div>
+			<div class="jingxuan">
+				<h3 style="margin-bottom: 15px;margin-left: 2%;">精选专题</h3>
+				<div v-for="item in jingxuan" :key="item" class="jingxuanup">
+					<img :src="item" class="jingxuanimg" alt />
+				</div>
+			</div>
 			<div class="hezuotop">
 				<h3 style="margin-bottom: 15px;margin-left: 2%;">合作机构</h3>
 				<div v-for="item in wdata" :key="item" class="hezuo">
@@ -204,7 +210,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 </template>
 
@@ -222,10 +228,14 @@
 	import hezuo3 from "@/assets/xueyuan/hezuo3.png";
 	import hezuo4 from "@/assets/xueyuan/hezuo4.jpg";
 	import hezuo5 from "@/assets/xueyuan/hezuo5.jpg";
-
+	import jingxuan1 from "@/assets/xueyuan/jingxuan1.png";
+	import jingxuan2 from "@/assets/xueyuan/jingxuan2.png";
+	import jingxuan3 from "@/assets/xueyuan/jingxuan3.png";
+	import jingxuan4 from "@/assets/xueyuan/jingxuan4.png";
 	export default {
 		data: function() {
 			return {
+				jingxuan: [jingxuan1, jingxuan2, jingxuan3, jingxuan4],
 				wdata: [hezuo1, hezuo2, hezuo3, hezuo4, hezuo5],
 				tu1: tu1,
 				tu2: tu2,
@@ -250,10 +260,33 @@
 		border-radius: 10px;
 	}
 
+	.jingxuan {
+		height: 200px;
+		padding-top: 20px;
+		width: 100%;
+	}
+
 	.hezuotop {
 		height: 200px;
 		padding-top: 20px;
 		width: 100%;
+	}
+
+	.jingxuanup {
+		width: 24%;
+		height: 140px;
+		margin-left: 1%;
+		display: inline-block;
+		text-align: center;
+	}
+
+	.jingxuanup img {
+		cursor: pointer;
+		transition: all 0.6s;
+	}
+
+	.jingxuanup img:hover {
+		transform: scale(1.1);
 	}
 
 	.hezuo {
@@ -267,10 +300,17 @@
 		border: 0.5px solid #000000;
 		border-radius: 10px;
 	}
-.hezuoimg{
-	width: 80%;
-	height: 76px;
-}
+
+	.jingxuanimg {
+		width: 100%;
+		height: 100%;
+	}
+
+	.hezuoimg {
+		width: 80%;
+		height: 76px;
+	}
+
 	.shizhan {
 		padding-top: 15px;
 		width: 31%;
@@ -297,14 +337,14 @@
 	}
 
 	.bigbox {
-		height: 1050px;
+		height: 1230px;
 		padding-top: 10px;
 		background-color: #ededee;
 	}
 
 	.box {
 		width: 80%;
-		height: 1000px;
+		height: 1180px;
 		margin: 0 auto;
 		display: flex;
 		background-color: #FFFFFF;

@@ -1,9 +1,9 @@
 <template>
 	<div id="app">
-		<div style="display: flex;width: 100%;background-color: #1AB2FF;">
+		<div style="display: flex;width: 100%;">
 			<div style="margin: 0 auto;">
-				<div style="display: inline-block;width: 5%;">
-					<img style="height: 60px;" src="./assets/csdn-logo_.png">
+				<div style="width: 200px;margin: 0 auto;">
+					<img style="height: 50px;" src="./assets/csdn-logo_.png">
 				</div>
 				<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
 				 :show-overflow-tooltip="true">
