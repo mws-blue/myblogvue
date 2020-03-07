@@ -16,20 +16,20 @@
       </h3>
       <div v-for="(item,index) in expertList" :key="index" class="expert-selfbox">
         <div class="expert-self">
-          <img :src="item.expertAvatar" class="expert-avatar" alt />
+          <img :src="item.imgUrl" class="expert-avatar" alt />
           <div class="self-descBox">
             <p class="self-desc1">
-              <span>{{item.expertName}}</span>
-              <span>icon</span>
+              <span>{{item.username}}</span>
+              <img :src="score" alt="" width="10px" height="10px">
             </p>
             <p class="self-desc2">
-              <span>{{item.job}}</span>
-              <span>{{item.article}}</span>
+              <span>{{item.ujob}}</span>
+              <span>{{item.uArticleNum}}篇</span>
             </p>
           </div>
         </div>
 
-        <p class="expert-desc">{{item.desc}}</p>
+        <p class="expert-desc">{{item.uIntroduction}}</p>
       </div>
     </div>
   </div>
@@ -39,9 +39,11 @@
 import JumpServer from "@/assets/blogImg/JumpServer.jpg";
 import blogdevteam from "@/assets/blogImg/blogdevteam.jpg";
 import dyc87112 from "@/assets/blogImg/dyc87112.jpg";
+import score from "@/assets/platformImg/score.gif";
 export default {
   data: function() {
     return {
+      score,
       JumpServer: JumpServer,
       blogdevteam: blogdevteam,
       expertList: [
@@ -72,7 +74,7 @@ export default {
           job: "架构师",
           article: "240篇",
           desc: "独立博客千万访问"
-		},
+		    },
 		{
           expertAvatar: dyc87112,
           expertName: "程序员DD",
@@ -89,6 +91,21 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+     getProfession(){
+       this.$http.get("/getProfession")
+       .then(res => {
+         console.log(res)
+         this.expertList = res.data;
+       })
+       .catch(err => {
+         console.error(err); 
+       })
+     }
+  },
+  mounted(){
+    this.getProfession();
   }
 };
 </script>
@@ -181,6 +198,7 @@ export default {
 	/* padding: 0 10px; */
 	display: flex;
 	justify-content: space-between;
+  align-items: center;
 }
 .self-desc2{
 	/* padding: 0 10px; */
@@ -189,8 +207,10 @@ export default {
 	color: #8590A6;
 }
 .expert-desc {
-  width: 100%;
+ /* width: 100%; */
+  margin: 0;
+  padding: 5px 0 5px 10px;
   color: #8590A6;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 </style>

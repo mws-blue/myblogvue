@@ -27,9 +27,9 @@
         </div>
       </div>
     </div>
-    <div v-for="(item,index) in 5" :key="index" class="platform-middleCon">
+    <div v-for="(item,index) in question" :key="index" class="platform-middleCon">
       <h3 class="toweek">
-        <span>热帖 技术区</span>
+        <span>{{item.classify}}</span>
         <a href="#">更多</a>
       </h3>
       <div class="current-title">
@@ -38,17 +38,17 @@
         <span>回复数</span>
         <span>人气</span>
       </div>
-      <ul v-for="(item,index) in 4" :key="index" class="current-hot">
+      <ul v-for="(item,index) in item.questions" :key="index" class="current-hot">
         <li>
-            <span class="hot-type">
-              <a href="#"> 
-                <i>c语言</i>
-                <strong>求解c语言文件问题</strong>
-              </a>
-            </span>
-            <span>JOKERCDD</span>
-            <span class="write-back">27</span>
-            <span>282</span>
+          <span class="hot-type">
+            <a href="#">
+              <i>{{item.qType}}</i>
+              <strong>{{item.qName}}</strong>
+            </a>
+          </span>
+          <span>{{item.username}}</span>
+          <span class="write-back">{{item.qReplyNum}}</span>
+          <span>{{item.qHot}}</span>
         </li>
       </ul>
     </div>
@@ -66,8 +66,19 @@ import zgl7903 from "@/assets/platformImg/zgl7903.jpg";
 export default {
   data: function() {
     return {
-      isArriveTop:false,
+      isArriveTop: false,
       meidi: meidi,
+      question: [
+        {
+          classify:"技术区",
+          questions:[]
+        },
+        {
+          classify:"生活区",
+          questions:[]
+        }
+      ],
+        
       introList: [
         {
           avatar: bdmh,
@@ -92,18 +103,45 @@ export default {
       ]
     };
   },
-  methods:{
-     arriveTop(){
-       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-       if(scrollTop > 100){
-         this.isArriveTop = true;
-       }else{
-         this.isArriveTop = false;
-       } 
-     }
+  methods: {
+    getTeQuestion() {
+      this.$http
+        .get("/getTeQuestion")
+        .then(res => {
+          console.log(res);
+          this.question[0].questions = res.data;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getNoTeQuestion() {
+      this.$http
+        .get("/getNoTeQuestion")
+        .then(res => {
+          console.log(res);
+          this.question[1].questions = res.data;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    arriveTop() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      if (scrollTop > 100) {
+        this.isArriveTop = true;
+      } else {
+        this.isArriveTop = false;
+      }
+    }
   },
-  mounted(){
-    window.addEventListener('scroll',this.arriveTop);
+  mounted() {
+    window.addEventListener("scroll", this.arriveTop);
+    this.getTeQuestion();
+    this.getNoTeQuestion();
   }
 };
 </script>
@@ -114,7 +152,7 @@ export default {
   color: #000;
 }
 
-.arriveTop{
+.arriveTop {
   margin-left: 210px;
 }
 
@@ -168,13 +206,13 @@ export default {
   padding: 1px;
 }
 
-.platform-middleCon{
+.platform-middleCon {
   background-color: #fff;
 }
 
 .current-title {
   background-color: #fafafa;
-  color: #99A5C0;
+  color: #99a5c0;
 }
 .current-title span {
   display: inline-block;
@@ -187,33 +225,46 @@ export default {
   width: 90px;
 }
 
-.current-hot{
+.current-hot {
   padding-left: 18px;
-  border: 1px solid #F2F2F2;
+  border: 1px solid #f2f2f2;
 }
-.current-hot li{
+.current-hot li {
   height: 56px;
   line-height: 56px;
 }
-.current-hot li span{
+.current-hot li span {
   display: inline-block;
 }
-.hot-type{
+.hot-type {
+  display: inline-block;
   width: 600px;
 }
-.current-hot li span:not(.hot-type){
+
+.hot-type a{
+  display: flex;
+  align-items: center;
+}
+.current-hot li span:not(.hot-type) {
   width: 90px;
   color: #707070;
 }
-.write-back{
+.write-back {
   text-align: center;
 }
-.hot-type i{
+.hot-type i {
+  display: inline-block;
+  /* width: 100px; */
   font-style: normal;
   padding-right: 10px;
-  color: #87A9DF;
+  color: #87a9df;
 }
-.hot-type strong{
-  color: #4F4F4F;
+.hot-type strong {
+  display: inline-block;
+  width: 450px;
+  color: #4f4f4f;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 </style>
