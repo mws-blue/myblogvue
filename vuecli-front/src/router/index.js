@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Blog from "../views/Blog.vue";
 import Platform from "../views/Platform.vue";
 import Xueyuan from '../views/Xueyuan.vue'
+import Wenda from '../views/Wenda.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ const routes = [{
         name: 'Xueyuan',
         component: Xueyuan
     },
+	{
+	    path: '/wenda',
+	    name: 'Wenda',
+	    component: Wenda
+	},
     {
         path: '/Login',
         component: () =>
@@ -41,6 +47,11 @@ const routes = [{
         component: () =>
             import ('../views/Register.vue'),
 
+    },
+    {
+        path: '/wangeditor',
+        component: () =>
+            import ('../views/wangeditor.vue'),
     },
     {
         path: '/userinfo',
