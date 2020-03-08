@@ -17,7 +17,12 @@
           <el-button type="primary" :disabled="isDisabled" @click="sendCode">{{buttonText}}</el-button>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input type="password" v-model="ruleForm2.password" auto-complete="off" placeholder="输入密码"></el-input>
+          <el-input
+            type="password"
+            v-model="ruleForm2.password"
+            auto-complete="off"
+            placeholder="输入密码"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="checkPass">
           <el-input
@@ -36,8 +41,6 @@
   </div>
 </template>
 <script>
-import axios from "axios";
-axios.defaults.baseURL = "http://localhost:8888";
 export default {
   data() {
     //  <!--验证用户名-->
@@ -105,12 +108,13 @@ export default {
     };
     return {
       ruleForm2: {
-        username: "郭德纲地方",
-        email: "fsfsd@asfa.bfdgd",
-        password: "111111",
-        checkPass: "111111",
-        tel: "11111111111",
-        smscode: "1111"
+        username: "",
+        email: "",
+        password: "",
+        checkPass: "",
+        tel: "",
+        smscode: "1111",
+        imgUrl:"http://bpic.588ku.com/element_origin_min_pic/01/48/90/655744466b77df5.jpg"
       },
       rules2: {
         username: [{ validator: checkUname, trigger: "change" }],
@@ -151,32 +155,30 @@ export default {
     },
     // <!--提交注册-->
     submitForm(formName) {
-        let vm=this;
-        axios.post('/register',this.ruleForm2)
-  .then(function (response) {
-      console.log(response)
-      if(response.data.code==-1){
-vm.$alert(response.data.Msg, '', {
-          confirmButtonText: '晓得了',
-        });
-            }
-           else if(response.data.code==1){
-vm.$notify({
-          title: '',
-          message: response.data.Msg,
-          offset: 100
-        });
+      let vm = this;
+      vm.$http
+        .post("/register", this.ruleForm2)
+        .then(function(response) {
+          console.log(response);
+          if (response.data.code == -1) {
+            vm.$alert(response.data.Msg, "", {
+              confirmButtonText: "晓得了"
+            });
+          } else if (response.data.code == 1) {
+            vm.$notify({
+              title: "",
+              message: response.data.Msg,
+              offset: 100
+            });
 
-
-    vm.$router.push({
+            vm.$router.push({
               path: "/Login"
             });
-            }
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-    
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
     // <!--进入登录页-->
     gotoLogin() {

@@ -56,36 +56,36 @@ const routes = [{
     {
         path: '/userinfo',
         component: () =>
-            import ('../views/userinfo/userinfo.vue'),
+            import ('../components/userinfo/userinfo.vue'),
         children: [{
                 path: 'pensonal',
                 component: () =>
-                    import ('../views/userinfo/pensonal.vue'),
+                    import ('../components/userinfo/pensonal.vue'),
 
             },
             {
                 path: 'attention',
                 component: () =>
-                    import ('../views/userinfo/attention.vue'),
+                    import ('../components/userinfo/attention.vue'),
 
             },
             {
                 path: 'collect',
                 component: () =>
-                    import ('../views/userinfo/collect.vue'),
+                    import ('../components/userinfo/collect.vue'),
             }
         ]
     },
     {
         path: '/myBlogs',
         component: () =>
-            import ('../views/myBlogs.vue'),
+            import ('../components/blog/myBlogs.vue'),
 
     },
     {
         path: '/manageBlogs',
         component: () =>
-            import ('../views/manageBlogs.vue'),
+            import ('../components/blog/manageBlogs.vue'),
 
     }
 

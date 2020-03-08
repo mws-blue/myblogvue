@@ -3,9 +3,11 @@
 const Service = require("egg").Service;
 
 class ArticleService extends Service{
-	async getArticle(){
+	async getArticle(userId){
 		const {app} = this;
-		let result = await app.mysql.query(`select aName,aContent,username,imgUrl from article a,users u where a.userId=u.userId`);
+		console.log(userId);
+		let sql = `select aName,aContent,username,imgUrl from article a,users u where a.userId=${userId} and a.userId=u.userId`;
+		let result = await app.mysql.query(sql);
 		return result;
 	}
 }

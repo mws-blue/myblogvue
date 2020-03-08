@@ -12,8 +12,8 @@
 				<h3>今日推荐</h3>
 			</div>
 			<div v-for="(item,index) in todayInfo" :key="index" class="today-info">
-				<img :src="item.adImg" width="60px" height="50px" alt="">
-				<a href="#" class="title-desc">{{item.title}}</a>
+				<img :src="item.tImg" width="60px" height="50px" alt="">
+				<a href="#" class="title-desc">{{item.tName}}</a>
 			</div>
 		</div>
 	</div>
@@ -30,47 +30,30 @@
 			return {
 				fuwuqi: fuwuqi,
 				adImgList: [python, AI, zhuji],
-				todayInfo: [{
-						"adImg": fuwuqi,
-						"title": "福利直投！CSDN技术公开课评选进行中"
-					},
-					{
-						"adImg": fuwuqi,
-						"title": "福利直投！CSDN技术公开课评选进行中"
-					},
-					{
-						"adImg": fuwuqi,
-						"title": "福利直投！CSDN技术公开课评选进行中"
-					},
-					{
-						"adImg": fuwuqi,
-						"title": "福利直投！CSDN技术公开课评选进行中"
-					},
-					{
-						"adImg": fuwuqi,
-						"title": "福利直投！CSDN技术公开课评选进行中"
-					},
-					{
-						"adImg": fuwuqi,
-						"title": "福利直投！CSDN技术公开课评选进行中"
-					},
-					{
-						"adImg": fuwuqi,
-						"title": "福利直投！CSDN技术公开课评选进行中"
-					},
-					{
-						"adImg": fuwuqi,
-						"title": "福利直投！CSDN技术公开课评选进行中"
-					}
-				]
+				todayInfo: []
 			};
+		},
+		methods:{
+			getTodayAD(){
+				this.$http.get("/getTodayAD")
+				.then(res=>{
+					console.log(res)
+					this.todayInfo = res.data;
+				})
+				.catch(err=>{
+					console.log(err)
+				})
+			}
+		},
+		mounted(){
+			this.getTodayAD();
 		}
 	};
 </script>
 
 <style>
 	.home-right {
-		height: 830px;
+		/* height: 830px; */
 		width: 30%;
 		background-color: white;
 	}

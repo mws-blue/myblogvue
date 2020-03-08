@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <p class="expert-desc">{{item.uIntroduction}}</p>
+        <p class="expert-desc">{{item.info}}</p>
       </div>
     </div>
   </div>

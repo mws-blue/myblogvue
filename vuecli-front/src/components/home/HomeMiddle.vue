@@ -18,27 +18,27 @@
     </div>
     <div v-for="(item,index) in mydata" :key="index" class="middlebottom">
       <h3>
-        <a style="width: 100%;" href="http://www.baidu.com">{{item.title}}</a>
+        <a style="width: 100%;" href="http://www.baidu.com">{{item.aName}}</a>
       </h3>
-      <div class="middlebottomxiao">{{item.titletwo}}</div>
+      <div class="middlebottomxiao">{{item.aContent}}</div>
       <div class="middlebottomtop">
         <div class="middlebottomtopleft">
-          <img class="imgtop" :src="item.wen" alt/>
-          <span>{{item.toptitle}}</span>
+          <img class="imgtop" :src="item.imgUrl" alt />
+          <span>{{item.username}}</span>
         </div>
         <div class="middlebottomtopright">
           <div>
             <span class="iconfont icon-dianzan"></span>
-            <span>{{item.toptwoa}}</span>
+            <span>{{item.aLike}}</span>
           </div>
           <div>
             <span class="iconfont icon-ico_yueduliang"></span>
-            <span>{{item.toptwob}}</span>
+            <span>{{item.aRead}}</span>
           </div>
 
           <div>
             <span class="iconfont icon-pinglun"></span>
-            <span>{{item.toptwoc}}</span>
+            <span>{{item.aComment}}</span>
           </div>
         </div>
       </div>
@@ -65,47 +65,24 @@ export default {
       spark: spark,
       lunboList: [lunbo1, lunbo2, lunbo3],
       currentIndex: 0,
-      mydata: [
-        {
-          title: `Python logging 较佳实践 `,
-          titletwo: `记录日志是程序中尤其是 web 服务中的重要一环，恰到好处的日志记录可以帮助我们了解程序运行情况以及方便排（shuai）错（guo）。logger 和 handler如果使用 logging 不多，可能对 logger 和 handler 这两个概念不熟，大多数还是直接使用 logging.info() 来记录日志。`,
-          wen: wen,
-          toptitle: "1_li_wen01",
-          toptwoa: 0,
-          toptwob: 242,
-          toptwoc: 6
-		},
-		{
-          title: `Python logging 较佳实践 `,
-          titletwo: `记录日志是程序中尤其是 web 服务中的重要一环，恰到好处的日志记录可以帮助我们了解程序运行情况以及方便排（shuai）错（guo）。logger 和 handler如果使用 logging 不多，可能对 logger 和 handler 这两个概念不熟，大多数还是直接使用 logging.info() 来记录日志。`,
-          wen: wen,
-          toptitle: "1_li_wen01",
-          toptwoa: 0,
-          toptwob: 242,
-          toptwoc: 6
-		},
-		{
-          title: `Python logging 较佳实践 `,
-          titletwo: `记录日志是程序中尤其是 web 服务中的重要一环，恰到好处的日志记录可以帮助我们了解程序运行情况以及方便排（shuai）错（guo）。logger 和 handler如果使用 logging 不多，可能对 logger 和 handler 这两个概念不熟，大多数还是直接使用 logging.info() 来记录日志。`,
-          wen: wen,
-          toptitle: "1_li_wen01",
-          toptwoa: 0,
-          toptwob: 242,
-          toptwoc: 6
-		},
-		{
-          title: `Python logging 较佳实践 `,
-          titletwo: `记录日志是程序中尤其是 web 服务中的重要一环，恰到好处的日志记录可以帮助我们了解程序运行情况以及方便排（shuai）错（guo）。logger 和 handler如果使用 logging 不多，可能对 logger 和 handler 这两个概念不熟，大多数还是直接使用 logging.info() 来记录日志。`,
-          wen: wen,
-          toptitle: "1_li_wen01",
-          toptwoa: 0,
-          toptwob: 242,
-          toptwoc: 6
-        }
-      ]
+      mydata: []
     };
   },
-
+  methods:{
+    getHomeArticle(){
+      this.$http.get("/getHomeArticle")
+      .then(res=>{
+        console.log(res);
+        this.mydata = res.data;
+      })
+      .catch(err=>{
+        console.log(err)
+      })
+    }
+  },
+  mounted(){
+     this.getHomeArticle();
+  }
 };
 </script>
 
@@ -163,17 +140,17 @@ export default {
   box-sizing: border-box;
 }
 
-.middlebottom:hover{
-	background-color:#fafafa ;
+.middlebottom:hover {
+  background-color: #fafafa;
 }
 
-.middlebottom h3{
-	margin: 0;
-	padding: 0 0 5px 0;
+.middlebottom h3 {
+  margin: 0;
+  padding: 0 0 5px 0;
 }
-.middlebottom h3 a{
-	text-decoration: none;
-	color: #3D3D3D;
+.middlebottom h3 a {
+  text-decoration: none;
+  color: #3d3d3d;
 }
 
 .middlebottom img {
@@ -191,14 +168,14 @@ export default {
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 5px;
-  color: #8A8A8A;
+  color: #8a8a8a;
   padding-bottom: 2px;
 }
 
 .imgtop {
-	width: 24px;
-	height: 24px;
-    border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
 }
 
 .middlebottomtop {
@@ -224,16 +201,16 @@ export default {
   align-items: center;
   line-height: 30px;
 }
-.middlebottomtopright div{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.middlebottomtopright div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.middlebottomtopright div span{
-	display: inline-block;
-	width: 16px;
-	height: 18px;
-	text-align: center;
-	line-height: 18px;
+.middlebottomtopright div span {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
 }
 </style>

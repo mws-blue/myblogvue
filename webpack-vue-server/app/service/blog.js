@@ -7,7 +7,7 @@ class BlogService extends Service{
 		const {app} = this;
 		const result = await app.mysql.select('users',{
 			where:{profession:0},
-			columns:['username','imgUrl','ujob','uIntroduction','uArticleNum']
+			columns:['username','imgUrl','ujob','info','uArticleNum']
 		});
 		return result;
 	}

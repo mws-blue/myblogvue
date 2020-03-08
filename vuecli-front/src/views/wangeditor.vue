@@ -28,9 +28,10 @@ export default {
     return {
       num: 0, //标题字数
       article: {
-        userId:"",
+        userId: "",
         aName: "输入文章标题", //标题
-        aContent: `` //文章内容
+        aContent: ``, //文章内容
+        aData: ""
       },
       editor: null
     };
@@ -40,25 +41,41 @@ export default {
       this.num = this.article.aName.length;
     },
     pushArticle() {
-      this.$http
-        .post("/pushArticle", this.article)
-        .then(res => {
-          console.log(res);
-          if(res.data.affectedRows===1){
-            alert("发表成功！")
-            this.$router.push("/myBlogs");
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
-      
-    }
+      var pushDate = new Date;
+      var year = pushDate.getFullYear();
+      var month = pushDate.getMonth();
+      var day= pushDate.getDate();
+      var hour = pushDate.getHours(); 
+      var min = pushDate.getMinutes();
+      var sec = pushDate.getSeconds();
+
+      this.article.aData = `${year}/${month}/${day} ${hour}:${min}:${sec}`;
+
+      console.log(this.article.aData);
+
+      if(this.article.aData != ""){
+        this.beginPush();
+      }
+
+     },
+     beginPush(){
+        this.$http
+          .post("/pushArticle", this.article)
+          .then(res => {
+            console.log(res);
+            if (res.data.affectedRows === 1) {
+              alert("发表成功！");
+              this.$router.push("/myBlogs");
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          });
+     }
   },
   mounted() {
-    
     this.article.userId = localStorage.getItem("userId");
-    
+
     this.editor = new E(this.$refs.editorElem);
     // 编辑器的事件，每次改变会获取其html内容
     this.editor.customConfig.onchange = html => {

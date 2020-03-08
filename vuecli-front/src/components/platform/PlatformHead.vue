@@ -10,14 +10,14 @@
           <el-menu-item index="1">论坛首页</el-menu-item>
           <el-submenu index="2">
             <template slot="title">精选版块</template>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
+            <el-menu-item index="2-1">移动开发</el-menu-item>
+            <el-menu-item index="2-2">云计算</el-menu-item>
+            <el-menu-item index="2-3">java技术</el-menu-item>
             <el-submenu index="2-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="2-4-1">选项1</el-menu-item>
-              <el-menu-item index="2-4-2">选项2</el-menu-item>
-              <el-menu-item index="2-4-3">选项3</el-menu-item>
+              <template slot="title">web开发</template>
+              <el-menu-item index="2-4-1">HTML(CSS)</el-menu-item>
+              <el-menu-item index="2-4-2">Javascript</el-menu-item>
+              <el-menu-item index="2-4-3">PHP</el-menu-item>
             </el-submenu>
           </el-submenu>
           <el-menu-item index="3">论坛牛人</el-menu-item>

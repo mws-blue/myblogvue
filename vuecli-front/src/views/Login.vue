@@ -11,17 +11,14 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" style="width:100%;" @click="submit">登录</el-button>
-          <a class="left">忘记密码？</a>
-          <a class="right" @click="register">注册新用户</a>
+          <a class="lefts">忘记密码？</a>
+          <a class="rightd" @click="register">注册新用户</a>
         </el-form-item>
       </el-form>
     </div>
   </div>
 </template>
 <script>
- 
-import axios from "axios";
-axios.defaults.baseURL = "http://localhost:8888";
 export default {
   data() {
     return {
@@ -46,8 +43,7 @@ export default {
       }
       else{
        
-      axios
-        .get("/Login", {
+      this.$http.get("/Login", {
           params: {
             username: this.ruleForm1.username,
             password: this.ruleForm1.password
@@ -70,7 +66,7 @@ export default {
             localStorage.setItem("userId",response.data.data.userId);
             localStorage.setItem("username", this.ruleForm1.username);
             localStorage.setItem("password", this.ruleForm1.password);
-            localStorage.setItem("imgUrl",response.data.data.imgUrl)
+            
         
             this.$router.push({
               path: "/"
@@ -111,7 +107,7 @@ export default {
   text-align: center;
 }
 
-.left {
+.lefts {
   margin-top: 15px;
   font-size: 14px;
   line-height: 22px;
@@ -119,7 +115,7 @@ export default {
   cursor: pointer;
   float: left;
 }
-.right {
+.rights {
   margin-top: 15px;
   font-size: 14px;
   line-height: 22px;

@@ -11,7 +11,6 @@ class LoginService extends Service {
         const { app } = this;
         console.log(username)
         let result = await app.mysql.get('users', { username })
-        console.log(result)
         return result;
     }
 
