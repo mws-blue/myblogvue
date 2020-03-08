@@ -67,7 +67,7 @@ export default {
             //sessionStrorege 浏览器本地缓存
             localStorage.setItem("loginStatus", "menu");
             
-            localStorage.setItem("userId",this.ruleForm1.userId);
+            localStorage.setItem("userId",response.data.data.userId);
             localStorage.setItem("username", this.ruleForm1.username);
             localStorage.setItem("password", this.ruleForm1.password);
             localStorage.setItem("imgUrl",response.data.data.imgUrl)

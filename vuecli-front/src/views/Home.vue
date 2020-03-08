@@ -1,8 +1,8 @@
 <template>
 	<div class="home-container">
 		<div class="container-info">
-			<home-left></home-left>
-			<home-middle></home-middle>
+			<home-left :class="{'fixed-top':isArrive}"></home-left>
+			<home-middle :class="{'notOffset':isArrive}"></home-middle>
 			<home-right></home-right>
 		</div>
 	</div>
@@ -17,15 +17,36 @@
 			"home-left": HomeLeft,
 			"home-middle": HomeMiddle,
 			"home-right": HomeRight
+		},
+		data(){
+			return {
+				isArrive:false
+			}
+		},
+		methods:{
+			getArrive(){
+				console.log("进入methods")
+				var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+				if(scrollTop>60){
+					this.isArrive = true;
+				}else{
+					this.isArrive = false;
+				}
+			}
+		},
+		mounted(){
+			console.log("挂载完毕")
+			window.addEventListener("scroll",this.getArrive);
 		}
 	};
 </script>
 
 <style>
 	.home-container {
-		height: 1050px;
+		/* height: 1050px; */
 		padding-top: 10px;
 		background-color: #ededee;
+		position: relative;
 	}
 
 	.container-info {
@@ -35,4 +56,15 @@
 		display: flex;
 		justify-content: space-between;
 	}
+
+	.fiex-top{
+        position: fixed;
+		top: 0;	
+	}
+
+	.noOffset{
+		position: fixed;
+		margin-left: 40px;
+	}
+
 </style>

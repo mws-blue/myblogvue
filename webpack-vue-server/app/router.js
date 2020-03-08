@@ -24,4 +24,7 @@ module.exports = app => {
 
     //存文章
     router.post("/pushArticle",controller.wangEditor.pushArticle);
+
+    //获取文章
+    router.get("/getArticle",controller.article.getArticle);
 };
